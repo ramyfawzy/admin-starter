@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
+import javax.inject.Named;
+
 import java.io.Serializable;
 import java.util.*;
 import java.util.stream.IntStream;
@@ -14,6 +16,8 @@ import java.util.stream.IntStream;
 /**
  * Created by rmpestano on 07/02/17.
  */
+
+@Named
 @ApplicationScoped
 public class Utils implements Serializable {
 
@@ -48,6 +52,10 @@ public class Utils implements Serializable {
     @Produces
     public List<Car> getCars() {
         return cars;
+    }
+    
+    public void sayHello() {
+    	System.out.println("Helloooo");
     }
 
 }
